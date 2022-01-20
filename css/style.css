@@ -1,0 +1,349 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;   
+}
+.container{
+    width: 95%;
+    margin: auto;
+}
+
+.separador{
+    max-width: 300px;
+    margin: 32px auto;
+
+}
+.titulo-seccion{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.img-width{
+    width: 100%;
+}
+/*HEADER */
+header{
+    background: #8C3F23;
+    padding: 32px 0
+}
+header .logo{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header .menu{
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+
+}
+header .menu .nav-link{
+    color: #fff;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+header .container{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+}
+
+ 
+
+/* SECCION BIENVENIDA */
+.bienvenida{
+    background-image: url('../img/inicio.jpeg');
+    min-height: 400px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+}
+.bienvenida .container{
+    display: flex;
+    justify-content: center;
+}
+.bienvenida .contenedor-titulo{
+    width: 768px;
+    height: 150px;
+    background: #000000da;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+/* SECCION PRODUCTOS */
+
+.productos{
+    background-color: #B4BF5E;
+}
+.productos .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+.productos .producto{
+    text-align: center;
+}
+.productos .producto h3{
+    margin: 16px 0;
+}
+.productos .producto p{
+    margin-bottom: 22px;
+}
+.productos .producto a{
+    color: #fff;
+    background: #F2B138;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    max-width: 120px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+    
+
+/* VIDEO */
+
+.video{
+    background-color: #F2B366;
+}
+.video iframe{
+    display: block;
+    margin: auto;
+}
+
+/* FOOTER */
+footer{
+    margin-top: 16px;
+    background-color: #353D40;
+    padding: 32px 0;
+}
+footer .copyright{
+    text-align: center;
+    color: #fff;
+}
+
+/* RECETAS */
+
+.recetas{
+    background-image: url(../img/recetas.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.recetas .container{
+   
+    display: flex;
+    justify-content: center;
+}
+.opciones{
+    background-color: #B4BF5E;
+}
+.opciones .container{
+    display: flex;
+    gap: 20px;
+}
+.opciones .opcion{
+    text-align: center;
+}
+.opciones .opcion h3{
+    margin: 16px 0;
+}
+.opciones .opcion p{
+    margin-bottom: 20px;
+}
+.opciones .opcion a{
+    color: #fff;
+    background: #F2B138;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* PAGINA PRODUCTOS */
+.productos-destacados .container{
+    display: grid;
+}
+
+@media screen and (max-width:600px){
+    /* PAGINA INICIO */
+    header .container{
+        grid-template-columns: 100%;
+    }
+    header .logo{
+        text-align: center;
+    }
+    header .menu{
+        font-size: 14px;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    .productos .container {
+        grid-template-columns: 100%;
+    }
+    .video iframe{
+        max-width: 320px;
+    }
+    
+    /* PAGINA PRODUCTOS */
+
+    .productos-destacados .container{
+       
+            height: 100%;
+            grid-gap: 2px;
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: "foto1"
+                                 "foto2"
+                                 "foto3"
+                                 "foto4"
+                                 "foto5"
+                                 "foto6";
+    }
+    
+    
+        
+        #productoUno{
+        grid-area: foto1;
+        align-self: center;
+        }
+    
+        #productoDos{
+        grid-area: foto2;
+        }
+    
+        #productoTres{
+        grid-area: foto3;
+        }
+    
+        #productoCuatro{
+        grid-area: foto4;
+        align-self: center;
+        }
+    
+        #productoCinco{
+        grid-area: foto5;
+        justify-self: end;
+        align-self: end; 
+        }
+    
+        #productoSeis{
+        grid-area: foto6;    
+        }
+}
+
+@media only screen and (min-width:600px){
+
+   /*PAGINA PRODUCTOS*/
+
+    .productos-destacados .container{
+        height: 100%;
+        grid-gap:2px;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "foto1 foto2"
+                             "foto3 foto4"
+                             "foto5 foto6";
+    }
+
+    #productoUno{
+        grid-area: foto1;    
+     
+    }
+
+    #productoDos{
+        grid-area: foto2;
+         
+    }
+
+    #productoTres{
+        grid-area: foto3;
+        width: 90%;
+       
+    }
+
+    #productoCuatro{
+        grid-area: foto4;
+        align-self: center;
+        
+    }
+
+    #productoCinco{
+        grid-area: foto5;
+          
+    }
+
+    #productoSeis{
+        grid-area: foto6;
+       
+    }
+}
+
+@media only screen and (min-width:992px){
+
+    /*PAGINA PRODUCTOS*/
+
+    .productos-destacados .container{
+        height: 100%;
+        grid-gap: 2px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-areas: "foto1 foto1 foto1"
+                             "foto2 foto3 foto4"
+                             "foto5 foto5 foto5"
+                             "foto6 foto6 foto6";
+    }
+    .productos-destacados .img-width{
+        height: 100%;
+    }
+    .productos-destacados .container div{
+        height: 100%;
+    }
+    #productoUno{
+        grid-area: foto1;
+        width: 100%;
+        height: 80%;
+       }
+
+    #productoDos{
+        grid-area: foto2;
+     
+    }
+
+    #productoTres{
+        grid-area: foto3;
+        width: 100%;
+        height: 80%;
+        align-self: center;
+        
+    }
+
+    #productoCuatro{
+        grid-area: foto6;
+        width: 100%;
+        
+       
+      
+    }
+    #productoCinco{
+        grid-area: foto5;
+        
+    
+    }
+
+    #productoSeis{
+        grid-area: foto4;
+      
+    
+    }
+    
+}
